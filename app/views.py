@@ -63,7 +63,7 @@ def login():
             if user is not None and check_password_hash(user.password, password):
             # get user id, load into session
                 login_user(user)
-                flash("Successful login!", "success")
+                flash("Successful login! Welcome to the Secure Page!", "success")
 
             # remember to flash a message to the user
                 return redirect(url_for("secure_page")) 
