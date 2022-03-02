@@ -33,6 +33,13 @@ def about():
 def secure_page():
     return render_template("secure_page.html")
 
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    flash('You have been logged out. You will be redirected to the home page soon.', 'danger')
+    return redirect(url_for('home'))
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
