@@ -37,8 +37,8 @@ def secure_page():
 @login_required
 def logout():
     logout_user()
-    flash('You have been logged out. You will be redirected to the home page soon.', 'danger')
-    return redirect(url_for('home'))
+    flash('You have been logged out.', 'danger')
+    return redirect(url_for("home"))
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
